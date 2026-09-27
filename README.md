@@ -9,7 +9,7 @@
 
 **1 张截图 = 10 秒入库** · 数据存在自己设备里 · 免费版永久免费
 
-[**下载 Windows 版**](https://github.com/miaokingsoft/xianmu-ims/releases/latest/download/XianMuIMS-setup.exe) ·
+[**下载 Windows 版**](https://github.com/miaokingsoft/XianMuIMS/releases/download/v1.78.0/XianMuIMS-1.78.0-setup.exe) ·
 [在线体验](https://imsdemo.miaoking.com) ·
 [官网](https://ims.miaoking.com) ·
 [全部版本](../../releases)
@@ -22,7 +22,7 @@
 
 ### Windows 安装版
 
-**[⬇ 下载 XianMuIMS-setup.exe](https://github.com/miaokingsoft/xianmu-ims/releases/latest/download/XianMuIMS-setup.exe)**
+**[⬇ 下载 XianMuIMS-setup.exe](https://github.com/miaokingsoft/XianMuIMS/releases/download/v1.78.0/XianMuIMS-1.78.0-setup.exe)**
 
 - 适用 **Windows 10 / 11 64 位**，双击安装即用，**无需**装 Python / Node / MySQL
 - 自带常驻工具箱（服务启停、开机自启、端口管理、数据库切换），**无需管理员权限**
@@ -183,6 +183,6 @@ Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
 
 **闲沐 IMS** · 极客AI · 物品管理
 
-[官网](https://ims.miaoking.com) · [在线演示](https://imsdemo.miaoking.com) · [下载最新版](https://github.com/miaokingsoft/xianmu-ims/releases/latest/download/XianMuIMS-setup.exe) · [Releases](../../releases)
+[官网](https://ims.miaoking.com) · [在线演示](https://imsdemo.miaoking.com) · [下载最新版](https://github.com/miaokingsoft/XianMuIMS/releases/download/v1.78.0/XianMuIMS-1.78.0-setup.exe) · [Releases](../../releases)
 
 </div>
