@@ -46,7 +46,7 @@ Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
 
 ## 先在线体验
 
-不想先装？**[imsdemo.miaoking.com](https://imsdemo.miaoking.com)** 随时可进，以**专业版全功能**运行（含多人协作 / 开放 API / 审计日志），无需注册。
+不想先装？**[请点击这里访问在线演示](https://imsdemo.miaoking.com)** 随时可进，以**专业版全功能**运行（含多人协作 / 开放 API / 审计日志），无需注册。
 
 演示账号 `demo`，密码见演示站公告。演示数据每日凌晨重置，请勿存放真实物品信息。
 
