@@ -1,11 +1,11 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-horizontal-dark.png">
-  <img src="assets/logo-horizontal.png" alt="闲沐 IMS · AI 智能物资管理平台" width="360">
+  <source media="(prefers-color-scheme: dark)" srcset="https://ims.miaoking.com/github/logo-horizontal-dark.png">
+  <img src="https://ims.miaoking.com/github/logo-horizontal.png" alt="闲沐 IMS · AI 智能物资管理平台" width="360">
 </picture>
 
-### 跑在自己电脑或 NAS 上的物资管理系统
+### 跑在自己电脑、NAS 或树莓派上的物资管理系统
 
 **1 张截图 = 10 秒入库** · 数据存在自己设备里 · 免费版永久免费
 
@@ -18,39 +18,13 @@
 
 ---
 
-## 下载
-
-### Windows 安装版
-
-**[⬇ 下载 XianMuIMS-setup.exe](https://github.com/miaokingsoft/XianMuIMS/releases/download/v1.78.0/XianMuIMS-1.78.0-setup.exe)**
-
-- 适用 **Windows 10 / 11 64 位**，双击安装即用，**无需**装 Python / Node / MySQL
-- 自带常驻工具箱（服务启停、开机自启、端口管理、数据库切换），**无需管理员权限**
-- 下载无需注册、不做邮箱校验；免费版永久免费，不激活也照常使用
-- 历史版本与更新说明见 [Releases](../../releases)；官网下载入口：[ims.miaoking.com](https://ims.miaoking.com/#download)
-
-**校验下载完整性（推荐）**：与安装包同目录发布同名 `.sha256` 文件。
-
-```powershell
-# Windows PowerShell：把结果与 Releases 页的 .sha256 文件对比，应完全一致
-Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
-```
-
-> **关于 SmartScreen 提示**：安装包暂未购买代码签名证书，Windows 首次运行可能提示"已保护你的电脑"。这不是病毒告警，而是对"未签名程序"的通用提示——可以点「更多信息 → 仍要运行」，或先用上面的 SHA256 校验确认文件未被篡改。介意的话也可以改用 [NAS / Docker 部署](https://ims.miaoking.com/docs/deploy.html)。
-
-### NAS / Docker 部署
-
-群晖、QNAP 或任意 Docker 环境：一条 `docker compose up` 启动，首次自动建表迁移；数据全在 NAS 自己的数据库里。图文步骤见 [部署指南](https://ims.miaoking.com/docs/deploy.html)。Mac 与 Linux 同样通过 Docker 运行。
-
----
-
 ## 先在线体验
 
 不想先装？**[请点击这里访问在线演示](https://imsdemo.miaoking.com)** 随时可进，以**专业版全功能**运行（含多人协作 / 开放 API / 审计日志），无需注册。
 
 演示账号 `demo`，密码见演示站公告。演示数据每日凌晨重置，请勿存放真实物品信息。
 
-![闲沐 IMS 主界面：物品图片化卡片视图、分类侧栏与检索](assets/shots/hero.webp)
+![闲沐 IMS 主界面：物品图片化卡片视图、分类侧栏与检索](https://ims.miaoking.com/github/shots/hero.webp)
 
 ---
 
@@ -76,37 +50,37 @@ Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
 
 购物截图直接 `Ctrl+V` 粘贴（或手机扫码传图），视觉大模型解析出品名、型号、数量、单价，**一图多物**逐行确认入库——一笔不超过 10 秒。也支持淘宝 / 天猫订单 xlsx 批量导入。
 
-![AI 贴图入库：粘贴商品图，AI 解析后逐行确认建档入库](assets/shots/feat-ai-confirm.webp)
+![AI 贴图入库：粘贴商品图，AI 解析后逐行确认建档入库](https://ims.miaoking.com/github/shots/feat-ai-confirm.webp)
 
 ### 物品档案与库存台账
 
 图片、参数、库存、流水一页看全；多图附件拖拽排序，首图即封面；自定义字段想加就加，照样搜得到。
 
-![物品档案：快速编辑抽屉，型号 / 系列可 AI 推荐](assets/shots/feat-item.webp)
+![物品档案：快速编辑抽屉，型号 / 系列可 AI 推荐](https://ims.miaoking.com/github/shots/feat-item.webp)
 
 ### 位置地图
 
 区域 → 柜 → 格位三级地图，按图索骥；同一物品可分布在多个位置；拖一下物品卡就完成移库。
 
-![位置地图：三级导航与右侧物品抽屉](assets/shots/feat-map.webp)
+![位置地图：三级导航与右侧物品抽屉](https://ims.miaoking.com/github/shots/feat-map.webp)
 
 ### 标签打印
 
 适配精臣 B21Pro 热敏标签机直印物品码 / 位置码，贴上即扫、扫码直达；标签长什么样，用拖拽设计器自己排。
 
-![标签打印：拖拽设计器排版专属标签，直连精臣 B21Pro 真实预览](assets/shots/feat-labels.webp)
+![标签打印：拖拽设计器排版专属标签，直连精臣 B21Pro 真实预览](https://ims.miaoking.com/github/shots/feat-labels.webp)
 
 ### 项目管理与 BOM 缺料
 
 导入项目 BOM，自动比对库存标出缺口（充足 / 部分缺 / 完全缺），缺料一键生成采购单，按行领用出库并统计用料成本。
 
-![项目管理：BOM 与库存逐行比对，缺口与用料成本一目了然](assets/shots/feat-project.webp)
+![项目管理：BOM 与库存逐行比对，缺口与用料成本一目了然](https://ims.miaoking.com/github/shots/feat-project.webp)
 
 ### 资料库 · 手册 / 购买链接 / 替代型号
 
 每个物品都能挂数据手册 PDF、购买链接（自动抓取存档并生成 AI 整理版）、替代型号候选——找料时不用再翻网盘、书签和聊天记录。
 
-![物品详情：手册与替代型号](assets/shots/feat-detail.webp)
+![物品详情：手册与替代型号](https://ims.miaoking.com/github/shots/feat-detail.webp)
 
 ### 还有这些
 
@@ -118,9 +92,9 @@ Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
 - **盘点** —— 任务 / 实盘录入 / 差异对比，确认后自动生成调整流水
 - **AI 批量补全 / AI 取图** —— 老档案一键补齐空缺字段（只填空缺，不覆盖人工填写）；没图的物品让 AI 找候选图手选
 - **通知渠道** —— 邮件 / 钉钉 / 企业微信 / Telegram，支持每日与每周摘要
-- **PWA 手机端** —— 手机浏览器打开就能用，可像 App 一样装到桌面；静态资源与读接口离线可查
+- **PWA 手机端** —— 手机浏览器打开就能用，可像 App 一样装到桌面；静态资源与读接口离线可查。**注意：激活与更换设备需联网访问一次官方门户**完成设备绑定，之后日常使用全程离线
 - **备份导出** —— 每日定时自动备份，CSV / Excel / JSON 导入导出
-- **部署形态** —— SQLite 单文件零运维，或 MySQL 8（两者任选、切换不迁移数据）
+- **部署形态** —— Windows 安装包双击即用（含常驻工具箱）；NAS / 树莓派 / 云服务器走 Docker 一条命令；数据库 SQLite 单文件零运维，或 MySQL 8（两者任选、切换不迁移数据）
 - **AI 智能体接入（专业版）** —— 整库接入 WorkBuddy 等 MCP 智能体，说人话查库存、办出入库、跑盘点，支持只读模式；详见下文「用 WorkBuddy 管库存」
 
 > **AI 能力需自配 API Key（BYOK）**：软件不附带密钥、不额外收费，用量由你自己控制；兼容 OpenAI 协议，也可接本地 Ollama 模型。
@@ -131,8 +105,8 @@ Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
 
 闲沐 IMS 专业版内置 MCP（Model Context Protocol）服务端，可以把整个库存系统接入 [WorkBuddy](https://www.workbuddy.cn) 这类 AI 智能体：**软件界面不用打开，中文说一句话，AI 直接查库存、办出入库、记借还、盯预警、跑盘点**。WorkBuddy 已实测 **27 个工具全部连通**（查询 11 个 + 写入 16 个）。
 
-<!-- TODO: 拍一张 WorkBuddy 真实对话截图，存为 assets/shots/feat-mcp.webp -->
-<!-- ![WorkBuddy 对话窗口：说人话，AI 直接操作库存系统](assets/shots/feat-mcp.webp) -->
+<!-- TODO: 拍一张 WorkBuddy 真实对话截图，存到官网托管目录（website/github/shots/feat-mcp.webp，与门面仓 assets/shots/ 同内容）后取消下面注释 -->
+<!-- ![WorkBuddy 对话窗口：说人话，AI 直接操作库存系统](https://ims.miaoking.com/github/shots/feat-mcp.webp) -->
 
 ### 对话即操作
 
@@ -215,10 +189,50 @@ AI 会主动补上下文——你问库存，它顺手把预警也报了。
 | 形态 | 要求 |
 |---|---|
 | Windows 安装版 | Windows 10 / 11 **64 位**；不需要 Python / Node / 数据库 |
-| NAS / Docker | 群晖、QNAP 或任意 Docker 环境（单容器）；Mac / Linux 同路径 |
+| NAS / 树莓派 / Docker | 群晖、QNAP、树莓派（**64 位系统**，走 arm64 镜像）或任意 Docker 环境（单容器）；Mac / Linux 同路径 |
 | 数据库（可选） | 默认 SQLite 单文件；也可选 MySQL 8 |
 | 浏览器 | Chrome / Edge / Safari / Firefox 等现代浏览器；手机端走 PWA |
 | 标签打印（可选） | 精臣 **B21Pro** 标签机 + 精臣官方 USB 驱动 + 闲沐本机打印服务（仅 Windows） |
+
+---
+
+## 下载
+
+### Windows 安装版
+
+**[⬇ 下载 XianMuIMS-setup.exe](https://github.com/miaokingsoft/XianMuIMS/releases/download/v1.78.0/XianMuIMS-1.78.0-setup.exe)**
+
+- 适用 **Windows 10 / 11 64 位**，双击安装即用，**无需**装 Python / Node / MySQL
+- 自带常驻工具箱（服务启停、开机自启、端口管理、数据库切换），**无需管理员权限**
+- 下载无需注册、不做邮箱校验；免费版永久免费，不激活也照常使用
+- 历史版本与更新说明见 [Releases](../../releases)；官网下载入口：[ims.miaoking.com](https://ims.miaoking.com/#download)
+
+**校验下载完整性（推荐）**：与安装包同目录发布同名 `.sha256` 文件。
+
+```powershell
+# Windows PowerShell：把结果与 Releases 页的 .sha256 文件对比，应完全一致
+Get-FileHash .\XianMuIMS-setup.exe -Algorithm SHA256
+```
+
+> **关于 SmartScreen 提示**：安装包暂未购买代码签名证书，Windows 首次运行可能提示"已保护你的电脑"。这不是病毒告警，而是对"未签名程序"的通用提示——可以点「更多信息 → 仍要运行」，或先用上面的 SHA256 校验确认文件未被篡改。介意的话也可以改用 [NAS / 树莓派 / Docker 部署](https://ims.miaoking.com/docs/deploy.html)。
+
+### NAS / 树莓派 / Docker 部署
+
+群晖、QNAP、树莓派（64 位系统）或任意 Docker 环境：一条 `docker compose up` 启动，首次自动建表迁移；数据全在自己设备本地的数据库里。图文步骤见 [部署指南](https://ims.miaoking.com/docs/deploy.html)。Mac、Linux 与树莓派同样通过 Docker 运行。
+
+镜像发布在腾讯云公有仓库 `ccr.ccs.tencentyun.com/xianmuwork/xianmuims`（**公有、免登录**），同时提供 x86（amd64）与 ARM（arm64）两种架构——**树莓派（64 位系统）走 arm64，已在实机验证**。电脑 / 树莓派 / 云服务器上整行复制粘贴即可起服务：
+
+```bash
+mkdir -p xianmu-ims && cd xianmu-ims && curl -fsSLO https://down.wwzu.com/release/docker/docker-compose.yml && { DC=docker-compose; docker compose version >/dev/null 2>&1 && DC="docker compose"; $DC up -d; }
+```
+
+Windows（已装 Docker Desktop，PowerShell 里执行）：
+
+```powershell
+mkdir xianmu-ims; cd xianmu-ims; iwr https://down.wwzu.com/release/docker/docker-compose.yml -OutFile docker-compose.yml; docker compose up -d
+```
+
+> 内网 / 无外网环境（拉不到镜像）：请联系**服务 QQ 7740840**，由客服一对一提供交付与激活方案。
 
 ---
 
@@ -228,13 +242,13 @@ AI 会主动补上下文——你问库存，它顺手把预警也报了。
 |---|---|
 | [快速开始](https://ims.miaoking.com/docs/quick-start.html) | 5 分钟跑起来：安装、初始化向导、贴图入库第一件物品 |
 | [用户手册](https://ims.miaoking.com/docs/manual.html) | 完整功能详解：入库、盘点、位置地图、标签设计器、资料库、AI 能力 |
-| [部署指南](https://ims.miaoking.com/docs/deploy.html) | Docker / 群晖部署、备份恢复与升级全流程 |
+| [部署指南](https://ims.miaoking.com/docs/deploy.html) | Docker / 群晖 / 树莓派部署、备份恢复与升级全流程 |
 | [API 文档](https://ims.miaoking.com/docs/api.html) | 开放接口、Webhook 与智能体接入（专业版） |
 | [常见问题 FAQ](https://ims.miaoking.com/faq.html) | 免费版限制、价格与授权、设备绑定与退款、标签打印安装 |
 
 **高频问题**
 
-- **是云端服务吗？** 不是。跑在你自己的电脑或 NAS 上，数据存本地，无云端依赖。
+- **是云端服务吗？** 不是。跑在你自己的电脑、NAS 或树莓派上，数据存本地，无云端依赖。
 - **免费版有什么限制？** 单人 1 个账号 + 50 件物品条目。注意算的是**条目数**（同一型号算一件），库存数量不限——某个型号库存 500 个也只占 1 件额度。
 - **AI 功能要另外付费吗？** 不另外付费，免费版与专业版都含；自配 API Key，用量自己控制。
 - **换电脑怎么办？** 门户自助解绑旧设备后重新激活即可，不重复收费（需联网访问一次门户）。
