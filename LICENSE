@@ -1,0 +1,61 @@
+# 闲沐 IMS 软件许可
+
+版权所有 © 2026 闲沐 IMS（XianMu IMS）。保留所有权利。
+
+**闲沐 IMS 是闭源商业软件。** 本仓库仅用于分发安装包、发布更新说明与收集反馈，**不包含软件源代码**。
+
+---
+
+## 1. 免费版
+
+免费版可免费下载、安装与使用，不限时间。使用范围：
+
+- **允许**：在自有或内部管理的设备上安装使用；用于个人事务、学习研究或所在单位的内部物品管理；为备份目的保留安装包副本。
+- **免费版限制**：单人 1 个账号、50 件物品条目（同一型号算一件，库存数量不限），详见官网 FAQ。
+
+## 2. 专业版
+
+专业版通过激活码授权，解锁的权益范围、设备绑定、更换设备、退款与支持承诺，以官网《服务条款》与购买页说明为准。专业版授权**不可转让**，除非官方另有书面说明。
+
+## 3. 通用限制（免费版与专业版均适用）
+
+在适用法律允许的最大范围内，你**不得**：
+
+- 对本软件进行反向工程、反编译、反汇编，或试图获取其源代码；
+- 修改、翻译、改编本软件，或制作衍生作品；
+- 移除、遮蔽或篡改软件中的版权标识、许可校验与授权机制；
+- 以本软件为基础提供托管服务、二次销售、出租、出借、再分发，或将安装包与激活码用于转售；
+- 规避、破解或以其他方式绕过授权校验、条目上限或功能门禁。
+
+## 4. 本仓库内容
+
+本仓库中的文档、截图、Logo 与品牌素材同样受版权保护。你可以为介绍与推荐本软件的目的引用截图与链接；除此之外不得修改、再发布或用于自己的产品、网站与宣传材料。
+
+## 5. 商标与名称
+
+"闲沐 IMS"、"XianMu IMS" 及相关图形标识为权利人所有。未经许可，不得用于暗示官方背书、合作或授权关系。
+
+## 6. 免责声明
+
+本软件按"现状"提供，不附带任何明示或默示的担保，包括但不限于对适销性、特定用途适用性与无侵权的担保。在法律允许的最大范围内，作者不对因使用或无法使用本软件而产生的任何损失承担责任。**请自行做好数据备份**——软件虽提供自动备份能力，但数据安全最终取决于你的设备与备份习惯。
+
+## 7. 联系方式
+
+- 官网：https://ims.miaoking.com
+- 邮箱：kf@wwzu.com
+- 条款全文：https://ims.miaoking.com/terms.html
+
+---
+
+## English summary (for reference only)
+
+XianMu IMS is **proprietary, closed-source commercial software**. This repository
+distributes the official installer and release notes only; **no source code is
+provided**. The free edition may be downloaded, installed and used at no cost
+within the limits stated on the official website. Reverse engineering,
+decompilation, modification, redistribution, resale, and circumvention of the
+licensing mechanism are prohibited. Professional-edition terms are governed by
+the official Terms of Service at https://ims.miaoking.com/terms.html. This
+software is provided "as is", without warranty of any kind.
+
+The Chinese text above is authoritative.
