@@ -20,7 +20,7 @@ description: 闲沐 IMS 库存管理操作技能。当用户要查询或管理�
 
 闲沐 IMS 同时提供两种方式，消费同一套开放 API、同受 Token 限流与专业版 `feature.api` 权益约束（无权益调用返回 403 `EDITION_REQUIRED`），二选一即可：
 
-- **客户端支持远程 HTTP MCP 时，优先用 MCP**：服务端原生 `BASE + /api/mcp`（Streamable HTTP），只填「实例地址 + Token」即得精选 **27 个工具**（读 11 / 写 16），零本地依赖，NAS / 远程实例同样可用。配置见文末「参考」。
+- **客户端支持远程 HTTP MCP 时，优先用 MCP**：服务端原生 `BASE + /api/mcp`（Streamable HTTP），只填「实例地址 + Token」即得精选 **66 个工具**（读 20 / 写 46），零本地依赖，NAS / 远程实例同样可用。配置见文末「参考」。
 - **客户端不支持（或不方便改配置）时，用本技能的 REST 方式**：即下文全部内容。
 
 ## 请求约定
@@ -86,4 +86,4 @@ GET /api/v1/items?q=M3&low_stock=false&page=1&page_size=20
 - 完整端点速查（参数/请求体/响应示例）：[references/api.md](references/api.md)
 - 机器可读接口定义：`GET BASE/api/openapi.json`（Swagger UI：`BASE/api/docs`）
 - 变更感知：库存/预警/采购事件可由用户在「设置 → Webhook」订阅（HMAC 签名推送），适合接 n8n 等自动化平台
-- 原生 MCP 接入（服务端 `BASE + /api/mcp`，Streamable HTTP）：**已上线**（专业版 `feature.api` 权益）——客户端支持远程 HTTP MCP 时优先用，请求头同样填 `Authorization: Bearer xmt_…`；URL 追加 `?mode=readonly` 即进入只读模式（写工具调用返回 `READONLY_MODE`），演示环境自动强制只读。工具面 27 个（读 11 / 写 16），覆盖查询、出入库、移库、盘点、预警与图片资料管理；不含物品删除/并库/设置类端点
+- 原生 MCP 接入（服务端 `BASE + /api/mcp`，Streamable HTTP）：**已上线**（专业版 `feature.api` 权益）——客户端支持远程 HTTP MCP 时优先用，请求头同样填 `Authorization: Bearer xmt_…`；URL 追加 `?mode=readonly` 即进入只读模式（写工具调用返回 `READONLY_MODE`），演示环境自动强制只读。工具面 66 个（读 20 / 写 46），覆盖查询、出入库、移库、盘点任务、预警、项目库与 BOM、采购、借用、基础档案（管理员）与图片资料管理；不含物品删除/并库/项目删除/设置类端点
