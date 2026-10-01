@@ -5,7 +5,7 @@
   <img src="https://ims.miaoking.com/github/logo-horizontal.png" alt="闲沐 IMS · AI 智能物资管理平台" width="360">
 </picture>
 
-### 跑在自己电脑、NAS 或树莓派上的物资管理系统
+### 闲沐 IMS · 让 AI 记住你拥有的每一件东西。
 
 **1 张截图 = 10 秒入库** · 数据存在自己设备里 · 免费版永久免费
 
