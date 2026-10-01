@@ -7,7 +7,7 @@
 
 ### 闲沐 IMS · 让 AI 记住你拥有的每一件东西。
 
-**1 张截图 = 10 秒入库** · 数据存在自己设备里 · 免费版永久免费
+**从"我记得我有"到"我知道它在哪"** · 从家里的收纳箱，到工作室的元件，再到实验室的设备和小仓库的库存。拍照、扫码、定位、搜索、管理，让现实世界的物品拥有自己的数字档案。
 
 [**下载 Windows 版**](https://github.com/miaokingsoft/XianMuIMS/releases/latest/download/XianMuIMS-setup.exe) ·
 [在线体验](https://imsdemo.miaoking.com) ·
