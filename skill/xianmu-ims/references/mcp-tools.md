@@ -16,7 +16,7 @@
 
 | 工具 | 签名 | 用途 |
 |---|---|---|
-| search_items | `search_items(q=None, type=None, category_id=None, location_id=None, tag=None, low_stock=False, status=None, series=None, sort=None, page=1, page_size=20)` | 只为取 `total`（物品总数），建议 `page_size=1` |
+| search_items | `search_items(q=None, type=None, category_id=None, location_id=None, tag=None, low_stock=False, status=None, series=None, sort=None, page=1, page_size=20)` | 只为取 `total`（物品总数），建议 `page_size=1`；`series` 支持逗号分隔多值（`series="胶水,螺丝"` 命中任一） |
 | list_categories | `list_categories()` | 分类现状；行含 `id/parent_id/type/name/sort/status/item_count` |
 | list_locations | `list_locations()` | 位置树；行含 `id/parent_id/level/code/name/path/status/storage_notes/children`；`total` 只数顶层区 |
 | list_custom_fields | `list_custom_fields()` | 收尾提示时参考（MCP 不能写自定义字段） |

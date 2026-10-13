@@ -1,7 +1,7 @@
 ---
 name: xianmu-ims
-description: 闲沐 IMS 智能体操作技能（单一入口，覆盖全部功能域）。当用户要初始化配置（初始化、新手指引、建分类、建位置、规划库位、开始使用）或日常管理库存（物品档案、入库、出库、移库、盘点、预警、采购、项目/BOM、供应商、库位、图片资料）时使用——通过用户自建的闲沐 IMS 实例 MCP / REST API 完成。触发词：闲沐、IMS、库存、入库、出库、移库、盘点、预警、库存查询、初始化、引导设置、建分类、建位置、新手指引、开始使用。
-version: 1.0.3
+description: 闲沐 IMS 智能体操作技能（单一入口，覆盖全部功能域）。当用户要初始化配置（初始化、新手指引、建分类、建位置、规划库位、开始使用）、日常管理库存（物品档案、入库、出库、移库、盘点、预警、采购、项目/BOM、供应商、库位、图片资料），或尚未安装闲沐 IMS 需要下载安装、设置 API Token 时使用——通过用户自建的闲沐 IMS 实例 MCP / REST API 完成。触发词：闲沐、IMS、库存、入库、出库、移库、盘点、预警、库存查询、初始化、引导设置、建分类、建位置、新手指引、开始使用、安装闲沐、下载闲沐、闲沐没装、激活。
+version: 1.1.0
 ---
 
 # 闲沐 IMS 智能体操作技能
@@ -10,10 +10,12 @@ version: 1.0.3
 
 ## 使用前提
 
-开始前向用户确认两件事（本会话内记住即可）：
+**步骤 0 · 连通性检测**：用户没给实例地址时，先探测默认地址 `curl -s http://127.0.0.1:8066/api/v1/health`（免认证）——返回 `"status": "up"` 即实例在线，顺手记下响应里的 `version` 与 `edition`；连不上先问用户实例地址（NAS / 远程部署很常见）再探一次；仍不通说明实例可能未安装，**不要硬问 Token**，转 [references/setup.md](references/setup.md) 走安装与接入引导。
+
+实例可达后，向用户确认两件事（本会话内记住即可）：
 
 1. **实例地址**（BASE，如 `http://<你的实例地址>:8066`，实例本机可用 `http://127.0.0.1:8066`）
-2. **API Token**（可选但强烈建议）：用户在闲沐 IMS「设置 → API Token」新建，形如 `xmt_` 开头，明文只显示一次。Token 决定操作权限（viewer 只读 / member 可写 / admin 管理），并有每分钟 60 次限流保护。初始化引导的写入（建分类/位置）需要 **admin** Token，详见 [references/onboarding.md](references/onboarding.md)。
+2. **API Token**（可选但强烈建议）：用户在闲沐 IMS「设置 → API Token」新建，形如 `xmt_` 开头，明文只显示一次。Token 决定操作权限（viewer 只读 / member 可写 / admin 管理），并有每分钟 60 次限流保护。初始化引导的写入（建分类/位置）需要 **admin** Token，详见 [references/onboarding.md](references/onboarding.md)。实例未安装时的下载安装与 Token 设置引导见 [references/setup.md](references/setup.md)。
 
 > 单人模式下实例不强制认证，无 Token 也能调用；但仍建议用户提供 Token（限流保护 + 操作审计）。
 
@@ -32,6 +34,7 @@ version: 1.0.3
 
 | 错误码 | 含义 | 处理建议 |
 |---|---|---|
+| 连接失败（无 HTTP 响应/拒绝/超时） | 实例未启动、未安装或地址不对 | 先问实例地址重探；确认未装则按 [references/setup.md](references/setup.md) 引导安装并设置 Token |
 | AUTH_REQUIRED (401) | Token 缺失/无效/已吊销 | 请用户重新创建 Token |
 | FORBIDDEN (403) | 角色权限不足 | 写操作需要 member 及以上；报废（scrap）出库与初始化写入需要 admin；向用户说明 |
 | EDITION_REQUIRED (403) | 无专业版权益（裸 REST / Webhook 调用） | 提示改用 MCP 工具面（免费版可用），或指引用户升级专业版 |
@@ -115,9 +118,13 @@ GET /api/v1/items?q=M3&low_stock=false&page=1&page_size=20
 | 1.0.1 | 2026-09-29 | 增补：仅接 MCP 的客户端可调服务端 `guide` 工具获取同款引导与各域操作规范（双源同文义务入扩充规则）；修正盘点工作流表述（任务创建/确认/取消已有 MCP 工具） |
 | 1.0.2 | 2026-09-29 | 修正：初始化引导「全新库」判定改为只看物品总数——出厂种子分类/位置是系统默认初始化内容，不作为已配置判据（与 `guide_script.py`、官网 skill.md 三处同文） |
 | 1.0.3 | 2026-09-30 | 口径更新（配套产品 v1.88.0 / 10 号 v3.2.1）：MCP 免费放开——权益总述与参考区改双键口径（MCP 查 `feature.mcp` 免费可用、裸 REST 维持 `feature.api` 专业版），免费版优先引导走 MCP；错误码表补 `LIMIT_EXCEEDED`（免费版 50 条目上限）行、`EDITION_REQUIRED` 行改 REST 专属 |
+| 1.0.4 | 2026-10-01 | 参考修正（配套产品 v1.90.0）：mcp-tools.md 的 `search_items` 参数说明补 `series` 支持逗号分隔多值（产品端系列筛选多选） |
+| 1.0.5 | 2026-10-07 | 口径订正（配套官网 skill.md v1.0.1 三处同步）：onboarding.md 的 Token 前提与 `FORBIDDEN` 处置改「Token 权限跟随创建账号（创建时无角色选择），需管理员账号登录后创建/重建」 |
+| 1.1.0 | 2026-10-12 | 新增「安装与接入引导」域（配套官网 skill.md 同源）：使用前提加步骤 0 连通性检测（`/api/v1/health` 免认证探测，未装不硬问 Token 转引导）；新增 references/setup.md（检测 → Windows 安装话术 → 用户亲手建 Token → 验证接入 → 激活码/AI 密钥分支 → 连接层错误对照）；错误码表补「连接失败」行；description 补安装类触发词 |
 
 ## 参考
 
+- [references/setup.md](references/setup.md) —— 安装与接入引导（实例未安装/未运行时：连通性检测、Windows 安装话术、用户亲手建 Token、验证接入、激活码/AI 密钥分支）
 - [references/api.md](references/api.md) —— REST 完整端点速查（参数/请求体/响应示例）
 - [references/onboarding.md](references/onboarding.md) —— 初始化引导五阶段流程（分类与位置配置）
 - [references/scenarios.md](references/scenarios.md) —— 初始化 7 场景模板（提问话术 + 分类/位置模板 + 默认值）

@@ -4,7 +4,7 @@
 
 本域前置要求（在根 SKILL.md「使用前提」之上）：
 
-1. **admin API Token**：写入分类/位置需要 admin 角色——member/viewer 的 Token 会得到 403 `FORBIDDEN`，此时请用户换管理员 Token。
+1. **管理员账号下的 API Token**：Token 权限跟随创建它的账号（创建时无角色选择）——写入分类/位置需管理员账号；用 member/viewer 账号创建的 Token 会得到 403 `FORBIDDEN`，此时请用户用管理员账号登录后重建 Token。
 2. **只走 MCP 工具**：服务端原生 MCP `BASE + /api/mcp`（Streamable HTTP，请求头 `Authorization: Bearer xmt_…`）。属 `feature.mcp` 权益——**免费版权益内置，免费版同样可用**（物品条目受 50 件上限，超限返回 403 `LIMIT_EXCEEDED`）。本域不直接调 REST（裸 REST 属专业版 `feature.api`）。
 
 ## 总体流程（五阶段，先读这里再动手）
@@ -151,7 +151,7 @@
 3. **不删数据**：本域不主动调用 `delete_category` / `delete_location`。仅当用户明确要求删除且该分类/位置为空时才可调用；返回 `IN_USE` 时**唯一动作**是改用 `update_category(status="disabled")` 停用并解释，不得为了删掉父级而先批量删除其子分类/子位置——若用户确要彻底删除，先讲清"删父级须先删全部子级"，等用户再次明确同意后才能逐级删。
 4. **错误处置**：
    - `AUTH_REQUIRED` → Token 无效，请用户重新创建；
-   - `FORBIDDEN` → 需要 admin Token，说明在网页端哪里生成；
+   - `FORBIDDEN` → Token 所属账号权限不够（写操作需管理员账号创建的 Token），说明在网页端用管理员账号登录后生成；
    - `LIMIT_EXCEEDED` → 免费版物品条目已达 50 件上限，报告数量并给出「删减条目或升级专业版」指引；
 - `EDITION_REQUIRED` → 裸 REST 无专业版权益（MCP 不受此限），改走 MCP 工具面或给出升级/客服指引；
    - `READONLY_MODE` → 实例或 Token 是只读，写入不可用；
